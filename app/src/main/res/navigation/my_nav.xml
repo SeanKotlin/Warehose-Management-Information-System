@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.sklinn.myapplication.fragment.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_vendorListFragment"
+            app:destination="@id/vendorListFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_customerListFragment"
+            app:destination="@id/customerListFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_addVendorFragment"
+            app:destination="@id/addVendorFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_addCustomerFragment"
+            app:destination="@id/addCustomerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.sklinn.myapplication.fragment.list.ProductListFragment"
+        android:label="Product List"
+        tools:layout="@layout/fragment_list_product" >
+        <action
+            android:id="@+id/action_productListFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_updateProductFragment"
+            app:destination="@id/updateProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.sklinn.myapplication.fragment.add.AddProductFragment"
+        android:label="fragment_add_product"
+        tools:layout="@layout/fragment_add_product" >
+        <action
+            android:id="@+id/action_addProductFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_addProductFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vendorListFragment"
+        android:name="com.sklinn.myapplication.fragment.list.VendorListFragment"
+        android:label="fragment_vendor_list"
+        tools:layout="@layout/fragment_list_vendor" >
+        <action
+            android:id="@+id/action_vendorListFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_vendorListFragment_to_addVendorFragment"
+            app:destination="@id/addVendorFragment" />
+        <action
+            android:id="@+id/action_vendorListFragment_to_updateVendorFragment"
+            app:destination="@id/updateVendorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addVendorFragment"
+        android:name="com.sklinn.myapplication.fragment.add.AddVendorFragment"
+        android:label="Add Vendor"
+        tools:layout="@layout/fragment_add_vendor" >
+        <action
+            android:id="@+id/action_addVendorFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_addVendorFragment_to_vendorListFragment"
+            app:destination="@id/vendorListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerListFragment"
+        android:name="com.sklinn.myapplication.fragment.list.CustomerListFragment"
+        android:label="Customer List"
+        tools:layout="@layout/fragment_list_customer" >
+        <action
+            android:id="@+id/action_customerListFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_customerListFragment_to_updateCustomerFragment"
+            app:destination="@id/updateCustomerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCustomerFragment"
+        android:name="com.sklinn.myapplication.fragment.add.AddCustomerFragment"
+        android:label="fragment_add_customer"
+        tools:layout="@layout/fragment_add_customer" >
+        <action
+            android:id="@+id/action_addCustomerFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_addCustomerFragment_to_customerListFragment"
+            app:destination="@id/customerListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateCustomerFragment"
+        android:name="com.sklinn.myapplication.fragment.update.UpdateCustomerFragment"
+        android:label="fragment_update_customer"
+        tools:layout="@layout/fragment_update_customer" >
+        <action
+            android:id="@+id/action_updateCustomerFragment_to_customerListFragment"
+            app:destination="@id/customerListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateVendorFragment"
+        android:name="com.sklinn.myapplication.fragment.update.UpdateVendorFragment"
+        android:label="fragment_update_vendor"
+        tools:layout="@layout/fragment_update_vendor" >
+        <action
+            android:id="@+id/action_updateVendorFragment_to_vendorListFragment"
+            app:destination="@id/vendorListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProductFragment"
+        android:name="com.sklinn.myapplication.fragment.update.UpdateProductFragment"
+        android:label="fragment_update_product"
+        tools:layout="@layout/fragment_update_product" >
+        <action
+            android:id="@+id/action_updateProductFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+</navigation>
