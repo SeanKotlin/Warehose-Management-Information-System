@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:menuCategory="container" >
+
+    <group android:menuCategory="container"
+        android:checkableBehavior="single"
+        android:id="@+id/menu_group_dashboard"
+        >
         <item
             android:id="@+id/pro"
             android:title="Dashboard" />
     </group>
-    <group >
+
+    <group android:id="@+id/menu_group_product"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/productListFragment"
             android:title="Product List" />
@@ -14,7 +20,8 @@
             android:id="@+id/addProductFragment"
             android:title="Add Product" />
     </group>
-    <group >
+    <group android:id="@+id/menu_group_vendor"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/vendorListFragment"
             android:title="Vendor List" />
@@ -22,7 +29,8 @@
             android:id="@+id/addVendorFragment"
             android:title="Add Vendor" />
     </group>
-    <group >
+    <group android:id="@+id/menu_group_customer"
+        android:checkableBehavior="all">
         <item
             android:id="@+id/customerListFragment"
             android:title="Customer List" />
@@ -30,4 +38,5 @@
             android:id="@+id/addCustomerFragment"
             android:title="Add Customer" />
     </group>
+
 </menu>
