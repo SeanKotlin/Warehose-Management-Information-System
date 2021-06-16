@@ -12,7 +12,6 @@ import com.sklinn.myapplication.repository.ProductRepository
 import com.sklinn.myapplication.repository.TransactionRepository
 import com.sklinn.myapplication.repository.EmployeeRepository
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.DisposableHandle
 import kotlinx.coroutines.launch
 
 class WarehouseViewModel(application: Application): AndroidViewModel(application) {
@@ -44,6 +43,41 @@ class WarehouseViewModel(application: Application): AndroidViewModel(application
             employeeRepository.addEmployee(employee)
         }
     }
+    fun updateEmployee(employee: Employee){
+        viewModelScope.launch(Dispatchers.IO) {
+            employeeRepository.updateEmployee(employee)
+        }
+    }
+    fun deleteEmployee(employee: Employee){
+        viewModelScope.launch(Dispatchers.IO) {
+            employeeRepository.deleteEmployee(employee)
+        }
+    }
+    fun deleteAllEmployee(){
+        viewModelScope.launch(Dispatchers.IO) {
+            employeeRepository.deleteAllEmployee()
+        }
+    }
 
-    //todo = all other function declared previously
+    //Product Table
+    fun addProduct(product: Product){
+        viewModelScope.launch (Dispatchers.IO) {
+            productRepository.addProduct(product)
+        }
+    }
+    fun updateProduct(product: Product){
+        viewModelScope.launch (Dispatchers.IO) {
+            productRepository.updateProduct(product)
+        }
+    }
+    fun deleteProduct(product: Product){
+        viewModelScope.launch (Dispatchers.IO) {
+            productRepository.deleteProduct(product)
+        }
+    }
+    fun deleteAllProducts(){
+        viewModelScope.launch (Dispatchers.IO) {
+            productRepository.deleteAllProduct()
+        }
+    }
 }
