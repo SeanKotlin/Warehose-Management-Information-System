@@ -8,7 +8,7 @@ import com.sklinn.myapplication.data.TransactionDao
 class TransactionRepository(
     private val transactionDao: TransactionDao
 ) {
-    val readAllEmployee = transactionDao.readAllTransaction()
+    val readAllTransaction = transactionDao.readAllTransaction()
 
     suspend fun addEmployee(transaction: Transaction){
         transactionDao.addTransaction(transaction)

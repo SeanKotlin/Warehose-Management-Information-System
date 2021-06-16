@@ -3,7 +3,7 @@ package com.sklinn.myapplication.repository
 import com.sklinn.myapplication.data.Employee
 import com.sklinn.myapplication.data.EmployeeDao
 
-class employeeRepository(
+class EmployeeRepository(
     private val employeeDao: EmployeeDao
 ) {
     val readAllEmployee = employeeDao.readALlEmployee()
