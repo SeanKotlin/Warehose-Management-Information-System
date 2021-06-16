@@ -1,4 +1,4 @@
-package com.sklinn.myapplication.fragment.list
+package com.sklinn.myapplication.fragment.update
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,15 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.sklinn.myapplication.R
 
-class CustomerListFragment : Fragment() {
 
+class UpdateEmployeeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_customer, container, false)
+        return inflater.inflate(R.layout.fragment_update_employee, container, false)
     }
-
 
 }

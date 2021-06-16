@@ -85,9 +85,9 @@
     </fragment>
     <fragment
         android:id="@+id/customerListFragment"
-        android:name="com.sklinn.myapplication.fragment.list.CustomerListFragment"
+        android:name="com.sklinn.myapplication.fragment.list.EmployeeListFragment"
         android:label="Customer List"
-        tools:layout="@layout/fragment_list_customer" >
+        tools:layout="@layout/fragment_list_employee" >
         <action
             android:id="@+id/action_customerListFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
@@ -97,9 +97,9 @@
     </fragment>
     <fragment
         android:id="@+id/addCustomerFragment"
-        android:name="com.sklinn.myapplication.fragment.add.AddCustomerFragment"
+        android:name="com.sklinn.myapplication.fragment.add.AddEmployeeFragment"
         android:label="fragment_add_customer"
-        tools:layout="@layout/fragment_add_customer" >
+        tools:layout="@layout/fragment_add_employee" >
         <action
             android:id="@+id/action_addCustomerFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
@@ -109,9 +109,9 @@
     </fragment>
     <fragment
         android:id="@+id/updateCustomerFragment"
-        android:name="com.sklinn.myapplication.fragment.update.UpdateCustomerFragment"
+        android:name="com.sklinn.myapplication.fragment.update.UpdateEmployeeFragment"
         android:label="fragment_update_customer"
-        tools:layout="@layout/fragment_update_customer" >
+        tools:layout="@layout/fragment_update_employee" >
         <action
             android:id="@+id/action_updateCustomerFragment_to_customerListFragment"
             app:destination="@id/customerListFragment" />
