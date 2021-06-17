@@ -19,5 +19,5 @@ interface TransactionDao {
     suspend fun deleteTransaction(transaction: Transaction)
 
     @Query("DELETE FROM table_transaction")
-    suspend fun deleteAllTransaction(): LiveData<List<Transaction>>
+    suspend fun deleteAllTransaction()
 }

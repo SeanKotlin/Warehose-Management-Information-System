@@ -1,22 +1,42 @@
 package com.sklinn.myapplication.fragment.list
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sklinn.myapplication.R
+import com.sklinn.myapplication.adapter.ProductAdapter
+import com.sklinn.myapplication.viewmodel.WarehouseViewModel
+import kotlinx.android.synthetic.main.fragment_list_product.*
 
-class ProductListFragment : Fragment() {
+class ProductListFragment : Fragment(R.layout.fragment_list_product) {
+
+    private lateinit var adapter: ProductAdapter
+    private lateinit var mViewModel: WarehouseViewModel
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        mViewModel =
+            ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(
+                activity?.application!!
+            ))[WarehouseViewModel::class.java]
+
+        adapter = ProductAdapter()
+        rv_listProduct.adapter = adapter
+        rv_listProduct.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
+        mViewModel.readAllProduct.observe(viewLifecycleOwner,{ products->
+            adapter.setNewData(products)
+        })
+
+        fabAddProduct.setOnClickListener {
+            findNavController().navigate(R.id.action_productListFragment_to_addProductFragment)
+        }
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_product, container, false)
     }
-
-
 }

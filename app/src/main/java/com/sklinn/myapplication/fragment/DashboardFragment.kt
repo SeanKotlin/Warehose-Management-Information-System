@@ -1,21 +1,34 @@
 package com.sklinn.myapplication.fragment
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.sklinn.myapplication.R
 
-class DashboardFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
 
-    }
+//    private lateinit var employeeAdapter: EmployeeAdapter
+//    private lateinit var productAdapter: ProductAdapter
+//    private lateinit var mViewModel: AndroidViewModel
 
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+
+//        mViewModel = ViewModelProvider(
+//            this,
+//            ViewModelProvider.AndroidViewModelFactory.getInstance(activity?.application!!)
+//        ).get(WarehouseViewModel::class.java)
+//
+//        employeeAdapter = EmployeeAdapter()
+//        productAdapter = ProductAdapter()
+//
+//        recyclerViewEmployeeList.adapter = employeeAdapter
+//        recyclerViewEmployeeList.layoutManager =
+//            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+//
+//        (mViewModel as WarehouseViewModel).readAllEmployee.observe(
+//            viewLifecycleOwner,
+//            Observer { users ->
+//                employeeAdapter.setNewData(users)
+//            })
+//    }
 
 }

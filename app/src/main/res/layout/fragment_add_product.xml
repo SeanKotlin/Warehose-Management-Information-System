@@ -1,14 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".fragment.add.AddProductFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--    val pCode: String,-->
+    <EditText
+        android:id="@+id/et_product_code"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:hint="Product Code" />
+    <!--    val item: String,-->
+    <EditText
+        android:id="@+id/et_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item Name" />
+    <!--    val description: String,-->
+    <EditText
+        android:id="@+id/et_product_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Description" />
+    <!--    val category: String,-->
+    <EditText
+        android:id="@+id/et_product_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Category" />
+    <!--    val grants: String,-->
+    <EditText
+        android:id="@+id/et_grants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Grants" />
+    <!--    val expiryDate: String,-->
+    <EditText
+        android:id="@+id/et_expiryDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Expiry Date" />
+    <!--    val lotNumber: String,-->
+    <EditText
+        android:id="@+id/et_product_lotNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lot Number" />
+    <!--    val countingUnit: String,-->
+    <EditText
+        android:id="@+id/et_product_unit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Unit" />
+    <!--    val discontinued: Boolean,-->
+    <CheckBox
+        android:id="@+id/et_discontinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Discontinue" />
+    <!--    val comments: String-->
+    <EditText
+        android:id="@+id/et_comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Comments" />
 
-</FrameLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAddProduct"
+        android:text="Add Product"
+        android:textAllCaps="false"
+        />
+
+</LinearLayout>

@@ -36,7 +36,6 @@
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/bg_card_employee_list"
-        android:orientation="horizontal"
         android:padding="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_employee" />
@@ -58,7 +57,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/bg_card_employee_list"
         android:padding="16dp"
-        tools:listitem="@layout/item_product_dashboard" />
+        tools:listitem="@layout/item_products" />
 
 
 </RelativeLayout>
