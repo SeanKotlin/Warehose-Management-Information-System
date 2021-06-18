@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_addCustomerFragment"
             app:destination="@id/addCustomerFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/productListFragment"
@@ -133,5 +136,14 @@
         <action
             android:id="@+id/action_updateProductFragment_to_productListFragment"
             app:destination="@id/productListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.sklinn.myapplication.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
     </fragment>
 </navigation>

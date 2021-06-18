@@ -1,6 +1,9 @@
 package com.sklinn.myapplication.fragment.list
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -33,10 +36,19 @@ class ProductListFragment : Fragment(R.layout.fragment_list_product) {
             adapter.setNewData(products)
         })
 
-        fabAddProduct.setOnClickListener {
+        setHasOptionsMenu(true)
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_add, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_addProduct){
             findNavController().navigate(R.id.action_productListFragment_to_addProductFragment)
         }
-
-
+        return super.onOptionsItemSelected(item)
     }
 }

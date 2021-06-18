@@ -1,63 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
+    android:paddingStart="24dp"
+    android:paddingTop="32dp"
+    android:paddingEnd="24dp"
     tools:context=".fragment.DashboardFragment">
 
-    <TextView
-        android:id="@+id/tvLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="32dp"
-        android:text="Warehouse Mangament System"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/ivProduct"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:padding="8dp"
+        android:background="@color/design_default_color_secondary"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_product_"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvEmpInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvLabel"
-        android:text="Employee Information"
-        android:textSize="20sp" />
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawableTint="@color/design_default_color_primary"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Product List"
+        android:textAllCaps="false"
+        android:id="@+id/btn_toProductList"
+        app:layout_constraintBottom_toBottomOf="@id/ivProduct"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivProduct"
+        app:layout_constraintTop_toTopOf="@id/ivProduct"
+        app:strokeColor="@color/design_default_color_primary"
+        app:strokeWidth="0.5dp" />
+
+    <ImageView
+        android:id="@+id/ivEmployee"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:padding="8dp"
+        android:background="@color/design_default_color_secondary"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_employee"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivProduct" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawableTint="@color/design_default_color_primary"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Employee List"
+        android:textAllCaps="false"
+        android:id="@+id/btn_toEmployeeList"
+        app:layout_constraintBottom_toBottomOf="@id/ivEmployee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivEmployee"
+        app:layout_constraintTop_toTopOf="@id/ivEmployee"
+        app:strokeColor="@color/design_default_color_primary"
+        app:strokeWidth="0.5dp" />
+
+    <ImageView
+        android:id="@+id/ivAddProduct"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@color/design_default_color_secondary"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_add_items"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivEmployee" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawableTint="@color/design_default_color_primary"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Add New Product"
+        android:textAllCaps="false"
+        android:id="@+id/btn_toAddProduct"
+        app:layout_constraintBottom_toBottomOf="@id/ivAddProduct"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivAddProduct"
+        app:layout_constraintTop_toTopOf="@id/ivAddProduct"
+        app:strokeColor="@color/design_default_color_primary"
+        app:strokeWidth="0.5dp" />
+
+    <ImageView
+        android:id="@+id/ivAddEmployee"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@color/design_default_color_secondary"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_add_items"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAddProduct" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawableTint="@color/design_default_color_primary"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Add New Employee"
+        android:textAllCaps="false"
+        android:id="@+id/btn_toAddEmployee"
+        app:layout_constraintBottom_toBottomOf="@id/ivAddEmployee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivAddEmployee"
+        app:layout_constraintTop_toTopOf="@id/ivAddEmployee"
+        app:strokeColor="@color/design_default_color_primary"
+        app:strokeWidth="0.5dp" />
+
+    <ImageView
+        android:id="@+id/ivAddVendor"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@color/design_default_color_secondary"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_add_items"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAddEmployee" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawableTint="@color/design_default_color_primary"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Add New Vendor"
+        android:textAllCaps="false"
+        android:id="@+id/btn_toAddVendor"
+        app:layout_constraintBottom_toBottomOf="@id/ivAddVendor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivAddVendor"
+        app:layout_constraintTop_toTopOf="@id/ivAddVendor"
+        app:strokeColor="@color/design_default_color_primary"
+        app:strokeWidth="0.5dp" />
+
+    <ImageView
+        android:id="@+id/ivVendorList"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@color/design_default_color_secondary"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_employee"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAddVendor" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawableTint="@color/design_default_color_primary"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Vendor List"
+        android:textAllCaps="false"
+        android:id="@+id/btn_toVendorList"
+        app:layout_constraintBottom_toBottomOf="@id/ivVendorList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivVendorList"
+        app:layout_constraintTop_toTopOf="@id/ivVendorList"
+        app:strokeColor="@color/design_default_color_primary"
+        app:strokeWidth="0.5dp" />
+
+    <ImageView
+        android:id="@+id/ivTransactionHistory"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:adjustViewBounds="true"
+        android:background="@color/design_default_color_secondary"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivVendorList" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawableTint="@color/design_default_color_primary"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Transaction History"
+        android:textAllCaps="false"
+        android:id="@+id/btn_toTransactionHistory"
+        app:layout_constraintBottom_toBottomOf="@id/ivTransactionHistory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivTransactionHistory"
+        app:layout_constraintTop_toTopOf="@id/ivTransactionHistory"
+        app:strokeColor="@color/design_default_color_primary"
+        app:strokeWidth="0.5dp" />
 
 
-    <!--    recycerview employee list-->
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewEmployeeList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvEmpInfo"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/bg_card_employee_list"
-        android:padding="16dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_employee" />
-
-
-    <TextView
-        android:id="@+id/tvProductList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/recyclerViewEmployeeList"
-        android:text="Inventory Information"
-        android:textSize="20sp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProductList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvProductList"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/bg_card_employee_list"
-        android:padding="16dp"
-        tools:listitem="@layout/item_products" />
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
