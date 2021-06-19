@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -23,17 +24,19 @@ class ProductListFragment : Fragment(R.layout.fragment_list_product) {
         super.onViewCreated(view, savedInstanceState)
 
         mViewModel =
-            ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(
-                activity?.application!!
-            ))[WarehouseViewModel::class.java]
+            ViewModelProvider(
+                this, ViewModelProvider.AndroidViewModelFactory.getInstance(
+                    activity?.application!!
+                )
+            )[WarehouseViewModel::class.java]
 
         adapter = ProductAdapter()
-        rv_listProduct.adapter = adapter
-        rv_listProduct.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        rvProductList.adapter = adapter
+        rvProductList.layoutManager = LinearLayoutManager(requireContext())
 
-        mViewModel.readAllProduct.observe(viewLifecycleOwner,{ products->
+        mViewModel.readAllProduct.observe(viewLifecycleOwner, { products ->
             adapter.setNewData(products)
+            Toast.makeText(requireContext(), "add to product list", Toast.LENGTH_LONG).show()
         })
 
         setHasOptionsMenu(true)
@@ -46,8 +49,10 @@ class ProductListFragment : Fragment(R.layout.fragment_list_product) {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_addProduct){
+        if (item.itemId == R.id.menu_add) {
             findNavController().navigate(R.id.action_productListFragment_to_addProductFragment)
+        }else if(item.itemId == R.id.menu_delete){
+            //todo: delete function
         }
         return super.onOptionsItemSelected(item)
     }

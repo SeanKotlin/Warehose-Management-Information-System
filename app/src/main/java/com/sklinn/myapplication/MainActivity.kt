@@ -28,7 +28,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.dashboardFragment,
                 R.id.productListFragment,
                 R.id.vendorListFragment,
-                R.id.customerListFragment
+                R.id.customerListFragment,
+                R.id.transactionListFragment
             )
         )
 //        setupActionBarWithNavController(navController, appBarConfiguration)

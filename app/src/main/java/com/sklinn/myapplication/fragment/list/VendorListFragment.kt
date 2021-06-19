@@ -1,21 +1,32 @@
 package com.sklinn.myapplication.fragment.list
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.sklinn.myapplication.R
 
 
-class VendorListFragment : Fragment() {
+class VendorListFragment : Fragment(R.layout.fragment_list_vendor) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_vendor, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_add, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_add) {
+            findNavController().navigate(R.id.action_vendorListFragment_to_addVendorFragment)
+        }else if(item.itemId == R.id.menu_delete){
+            //todo: delete function
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }

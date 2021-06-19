@@ -31,6 +31,12 @@
         <action
             android:id="@+id/action_dashboardFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_transactionListFragment"
+            app:destination="@id/transactionListFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_addTransactionFragment"
+            app:destination="@id/addTransactionFragment" />
     </fragment>
     <fragment
         android:id="@+id/productListFragment"
@@ -95,8 +101,11 @@
             android:id="@+id/action_customerListFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
         <action
-            android:id="@+id/action_customerListFragment_to_updateCustomerFragment"
+            android:id="@+id/customerListToAdd"
             app:destination="@id/updateCustomerFragment" />
+        <action
+            android:id="@+id/action_customerListFragment_to_addCustomerFragment"
+            app:destination="@id/addCustomerFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCustomerFragment"
@@ -144,6 +153,27 @@
         tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_profileFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionListFragment"
+        android:name="com.sklinn.myapplication.fragment.list.TransactionListFragment"
+        android:label="Transaction Records"
+        tools:layout="@layout/fragment_transaction_list" >
+        <action
+            android:id="@+id/action_transactionListFragment_to_addTransactionFragment"
+            app:destination="@id/addTransactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="com.sklinn.myapplication.fragment.add.AddTransactionFragment"
+        android:label="Add new transaction"
+        tools:layout="@layout/fragment_add_transaction" >
+        <action
+            android:id="@+id/action_addTransactionFragment_to_transactionListFragment"
+            app:destination="@id/transactionListFragment" />
+        <action
+            android:id="@+id/action_addTransactionFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
     </fragment>
 </navigation>

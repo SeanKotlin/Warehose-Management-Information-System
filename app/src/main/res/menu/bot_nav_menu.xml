@@ -19,7 +19,7 @@
         android:icon="@drawable/ic_vendor"
         android:title="Vendor List" />
     <item
-
+        android:id="@+id/transactionListFragment"
         android:icon="@drawable/ic_note"
         android:title="Itemsaction List" />
 </menu>
