@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic__08_home"
+        android:title="Dashboard"
+        android:visible="true" />
+    <item
+        android:id="@+id/productListFragment"
+        android:icon="@drawable/ic_box"
+        android:title="Product List" />
+    <item
+        android:id="@+id/customerListFragment"
+        android:icon="@drawable/ic_employee"
+        android:title="Employee List" />
+    <item
+        android:id="@+id/vendorListFragment"
+        android:icon="@drawable/ic_vendor"
+        android:title="Vendor List" />
+    <item
+
+        android:icon="@drawable/ic_note"
+        android:title="Itemsaction List" />
+</menu>

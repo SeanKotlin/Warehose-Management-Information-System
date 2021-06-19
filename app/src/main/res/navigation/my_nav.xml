@@ -50,8 +50,8 @@
     <fragment
         android:id="@+id/addProductFragment"
         android:name="com.sklinn.myapplication.fragment.add.AddProductFragment"
-        android:label="fragment_add_product"
-        tools:layout="@layout/fragment_add_product" >
+        android:label="Add Product"
+        tools:layout="@layout/fragment_add_product">
         <action
             android:id="@+id/action_addProductFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
@@ -62,8 +62,8 @@
     <fragment
         android:id="@+id/vendorListFragment"
         android:name="com.sklinn.myapplication.fragment.list.VendorListFragment"
-        android:label="fragment_vendor_list"
-        tools:layout="@layout/fragment_list_vendor" >
+        android:label="Vendor List"
+        tools:layout="@layout/fragment_list_vendor">
         <action
             android:id="@+id/action_vendorListFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
@@ -101,8 +101,8 @@
     <fragment
         android:id="@+id/addCustomerFragment"
         android:name="com.sklinn.myapplication.fragment.add.AddEmployeeFragment"
-        android:label="fragment_add_customer"
-        tools:layout="@layout/fragment_add_employee" >
+        android:label="Add Customer"
+        tools:layout="@layout/fragment_add_employee">
         <action
             android:id="@+id/action_addCustomerFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
@@ -113,8 +113,8 @@
     <fragment
         android:id="@+id/updateCustomerFragment"
         android:name="com.sklinn.myapplication.fragment.update.UpdateEmployeeFragment"
-        android:label="fragment_update_customer"
-        tools:layout="@layout/fragment_update_employee" >
+        android:label="Update Customer"
+        tools:layout="@layout/fragment_update_employee">
         <action
             android:id="@+id/action_updateCustomerFragment_to_customerListFragment"
             app:destination="@id/customerListFragment" />
@@ -122,8 +122,8 @@
     <fragment
         android:id="@+id/updateVendorFragment"
         android:name="com.sklinn.myapplication.fragment.update.UpdateVendorFragment"
-        android:label="fragment_update_vendor"
-        tools:layout="@layout/fragment_update_vendor" >
+        android:label="Update Vendor"
+        tools:layout="@layout/fragment_update_vendor">
         <action
             android:id="@+id/action_updateVendorFragment_to_vendorListFragment"
             app:destination="@id/vendorListFragment" />
@@ -131,8 +131,8 @@
     <fragment
         android:id="@+id/updateProductFragment"
         android:name="com.sklinn.myapplication.fragment.update.UpdateProductFragment"
-        android:label="fragment_update_product"
-        tools:layout="@layout/fragment_update_product" >
+        android:label="Update Product"
+        tools:layout="@layout/fragment_update_product">
         <action
             android:id="@+id/action_updateProductFragment_to_productListFragment"
             app:destination="@id/productListFragment" />
@@ -140,8 +140,8 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.sklinn.myapplication.fragment.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_profileFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />

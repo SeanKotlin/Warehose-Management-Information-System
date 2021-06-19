@@ -51,4 +51,5 @@ class ProductListFragment : Fragment(R.layout.fragment_list_product) {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }

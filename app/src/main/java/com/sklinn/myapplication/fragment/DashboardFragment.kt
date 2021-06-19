@@ -15,6 +15,7 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setHasOptionsMenu(true)
 
 
         btn_toAddEmployee.setOnClickListener {
@@ -42,6 +43,7 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
         }
 
         setHasOptionsMenu(true)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -51,7 +53,11 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId==R.id.menu_item_profile){
+
             findNavController().navigate(R.id.action_dashboardFragment_to_profileFragment)
+
+        }else if(item.itemId == R.id.menu_logout){
+            activity?.finish()
         }
         return super.onOptionsItemSelected(item)
     }
