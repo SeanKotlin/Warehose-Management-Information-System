@@ -1,72 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".fragment.add.AddProductFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    <!--    val pCode: String,-->
-    <EditText
-        android:id="@+id/et_product_code"
+    tools:context=".fragment.add.AddProductFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Code" />
-    <!--    val item: String,-->
+        android:hint="Product Code"
+        app:startIconDrawable="@drawable/ic_product_"
+        app:helperText="The field must not be empty"
+        app:helperTextTextColor="@color/design_default_color_primary"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_product_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    val pCode: String,-->
+
+<!--    todo: endIconAdd and Drop Down list-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item Name"
+        android:layout_marginTop="4dp"
+        app:startIconDrawable="@drawable/ic_box"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
     <EditText
         android:id="@+id/et_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Item Name" />
+        />
+    </com.google.android.material.textfield.TextInputLayout>
     <!--    val description: String,-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Description"
+        android:layout_marginTop="4dp"
+        app:startIconDrawable="@drawable/ic_medicine"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
     <EditText
         android:id="@+id/et_product_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Description" />
+         />
+    </com.google.android.material.textfield.TextInputLayout>
     <!--    val category: String,-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Category"
+        android:layout_marginTop="4dp"
+        app:startIconDrawable="@drawable/ic_product_"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
     <EditText
         android:id="@+id/et_product_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Category" />
+         />
+    </com.google.android.material.textfield.TextInputLayout>
     <!--    val grants: String,-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Grants"
+        android:layout_marginTop="4dp"
+        app:startIconDrawable="@drawable/ic_dollar"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
     <EditText
         android:id="@+id/et_grants"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Grants" />
+         />
+    </com.google.android.material.textfield.TextInputLayout>
     <!--    val expiryDate: String,-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Expiry Date"
+        android:layout_marginTop="4dp"
+        app:startIconDrawable="@drawable/ic_calendar"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
     <EditText
         android:id="@+id/et_expiryDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Expiry Date" />
+         />
+    </com.google.android.material.textfield.TextInputLayout>
     <!--    val lotNumber: String,-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lot Number"
+        android:layout_marginTop="4dp"
+        app:startIconDrawable="@drawable/ic_product_"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
     <EditText
         android:id="@+id/et_product_lotNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Lot Number" />
+        />
+    </com.google.android.material.textfield.TextInputLayout>
     <!--    val countingUnit: String,-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Unit"
+        android:layout_marginTop="4dp"
+        app:startIconDrawable="@drawable/ic_checked"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
     <EditText
         android:id="@+id/et_product_unit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Unit" />
+         />
+    </com.google.android.material.textfield.TextInputLayout>
     <!--    val discontinued: Boolean,-->
     <CheckBox
         android:id="@+id/et_discontinue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:hint="Discontinue" />
     <!--    val comments: String-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Comments"
+        android:layout_marginTop="4dp"
+        app:startIconDrawable="@drawable/ic_note"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
     <EditText
         android:id="@+id/et_comments"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Comments" />
+         />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:layout_width="match_parent"
@@ -75,5 +167,6 @@
         android:text="Add Product"
         android:textAllCaps="false"
         />
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
