@@ -2,12 +2,12 @@
     <string name="app_name">Warehouse Management Information System</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="vendor_name">Vendor Name</string>
+    <string name="vendorName">Vendor Name</string>
     <string name="vendor_mobile_phone">Vendor Mobile Phone</string>
     <string name="vendor_address">Vendor Address</string>
     <string name="any_notes">Any Notes</string>
-    <string name="add_employee">Add Employee</string>
-    <string name="business_phone">Business Phone</string>
+    <string name="add_employee">Add New Vendor</string>
+    <string name="businessPhone">Business Phone</string>
     <string name="employee_name">Employee Name</string>
     <string name="email">Email</string>
     <string name="job_title">Job Title</string>
@@ -16,4 +16,6 @@
     <string name="business_phone">Business Phone</string>
     <string name="mobile_phone">Mobile Phone</string>
     <string name="notes">Notes</string>
+    <string name="vendor_name">Vendor Name</string>
+    <string name="contact_person">Contact Person</string>
 </resources>

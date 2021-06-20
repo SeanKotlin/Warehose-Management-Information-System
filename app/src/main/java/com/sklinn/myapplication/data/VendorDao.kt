@@ -10,7 +10,7 @@ interface VendorDao {
     fun addVendor(vendor: Vendor)
 
     @Query("SELECT * FROM table_vendor")
-    fun readAllVendors(): LiveData<List<Vendor>>
+    fun readAllVendors():LiveData<List<Vendor>>
 
     @Update
     suspend fun updateVendor(vendor: Vendor)

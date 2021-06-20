@@ -5,13 +5,11 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sklinn.myapplication.data.AppDatabase
-import com.sklinn.myapplication.data.Employee
-import com.sklinn.myapplication.data.Product
-import com.sklinn.myapplication.data.Transaction
+import com.sklinn.myapplication.data.*
 import com.sklinn.myapplication.repository.EmployeeRepository
 import com.sklinn.myapplication.repository.ProductRepository
 import com.sklinn.myapplication.repository.TransactionRepository
+import com.sklinn.myapplication.repository.VendorRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -23,6 +21,9 @@ class WarehouseViewModel(application: Application) : AndroidViewModel(applicatio
     private val employeeRepository: EmployeeRepository
     private val productRepository: ProductRepository
     private val transactionRepository: TransactionRepository
+    val readAllVendor: LiveData<List<Vendor>>
+    val vendorNameList: LiveData<List<String>>
+    private val vendorRepository: VendorRepository
 
     init {
         val employeeDao = AppDatabase.getDatabase(application).employeeDao()
@@ -36,6 +37,11 @@ class WarehouseViewModel(application: Application) : AndroidViewModel(applicatio
         val transactionDao = AppDatabase.getDatabase(application).transactionDao()
         transactionRepository = TransactionRepository(transactionDao)
         readAllTransaction = transactionRepository.readAllTransaction
+
+        val vendorDao = AppDatabase.getDatabase(application).vendorDao()
+        vendorRepository = VendorRepository(vendorDao)
+        readAllVendor = vendorDao.readAllVendors()
+        vendorNameList = vendorDao.vendorNameList()
     }
 
     //Employee table
@@ -85,6 +91,31 @@ class WarehouseViewModel(application: Application) : AndroidViewModel(applicatio
     fun deleteAllProducts() {
         viewModelScope.launch(Dispatchers.IO) {
             productRepository.deleteAllProduct()
+        }
+    }
+
+    //Vendor
+    fun addVendor(vendor: Vendor) {
+        viewModelScope.launch(Dispatchers.IO) {
+            vendorRepository.addVendor(vendor)
+        }
+    }
+
+    fun updateVendor(vendor: Vendor) {
+        viewModelScope.launch(Dispatchers.IO) {
+            vendorRepository.updateVendor(vendor)
+        }
+    }
+
+    fun deleteVendor(vendor: Vendor) {
+        viewModelScope.launch(Dispatchers.IO) {
+            vendorRepository.deleteVendor(vendor)
+        }
+    }
+
+    fun deleteAllVendors() {
+        viewModelScope.launch(Dispatchers.IO) {
+            vendorRepository.deleteAllVendors()
         }
     }
 }

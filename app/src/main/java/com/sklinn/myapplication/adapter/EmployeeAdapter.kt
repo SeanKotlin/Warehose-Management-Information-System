@@ -1,5 +1,6 @@
 package com.sklinn.myapplication.adapter
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,15 +8,14 @@ import com.sklinn.myapplication.R
 import com.sklinn.myapplication.data.Employee
 import kotlinx.android.synthetic.main.item_employee.view.*
 
-class EmployeeAdapter(): BaseAdapter<Employee,EmployeeAdapter.myViewHolder>() {
-
+class EmployeeAdapter() : RecyclerView.Adapter<EmployeeAdapter.myViewHolder>() {
     private var employeeList = mutableListOf<Employee>()
 
-    inner class myViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class myViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
-        val view = getLayoutInflator(parent).inflate(R.layout.item_employee, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_employee, parent)
         return myViewHolder(view)
     }
 
@@ -27,4 +27,15 @@ class EmployeeAdapter(): BaseAdapter<Employee,EmployeeAdapter.myViewHolder>() {
             tvPhone.text = data.businessPhone
         }
     }
+
+    override fun getItemCount(): Int {
+        return employeeList.size
+    }
+
+    fun setNewData(employees: List<Employee>) {
+        employeeList.clear()
+        employeeList.addAll(employees)
+        notifyDataSetChanged()
+    }
 }
+
