@@ -20,4 +20,7 @@ interface EmployeeDao {
 
     @Query("DELETE FROM table_employee")
     suspend fun deleteAllEmployee()
+
+    @Query("SELECT employee_name FROM table_employee")
+    fun employeeNameList(): LiveData<List<String>>
 }

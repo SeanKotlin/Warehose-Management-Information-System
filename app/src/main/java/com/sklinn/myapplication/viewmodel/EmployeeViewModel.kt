@@ -15,6 +15,7 @@ class EmployeeViewModel(
 ) : AndroidViewModel(application) {
 
     val readAllEmployee: LiveData<List<Employee>>
+    val employeeNameList: LiveData<List<String>>
     private val employeeRepository: EmployeeRepository
 
 
@@ -22,6 +23,7 @@ class EmployeeViewModel(
         val employeeDao = AppDatabase.getDatabase(application).employeeDao()
         employeeRepository = EmployeeRepository(employeeDao)
         readAllEmployee = employeeDao.readALlEmployee()
+        employeeNameList = employeeDao.employeeNameList()
     }
 
     //Employee table
@@ -48,4 +50,10 @@ class EmployeeViewModel(
             employeeRepository.deleteAllEmployee()
         }
     }
+
+//    fun getEmployeeList(){
+//        viewModelScope.launch (Dispatchers.IO) {
+//            employeeRepository.getEmployeeList()
+//        }
+//    }
 }

@@ -7,6 +7,7 @@ class EmployeeRepository(
     private val employeeDao: EmployeeDao
 ) {
     val readAllEmployee = employeeDao.readALlEmployee()
+    val employeeNameList = employeeDao.employeeNameList()
 
     suspend fun addEmployee(employee: Employee){
         employeeDao.addEmployee(employee)
@@ -23,4 +24,5 @@ class EmployeeRepository(
     suspend fun deleteAllEmployee(){
         employeeDao.deleteAllEmployee()
     }
+
 }
